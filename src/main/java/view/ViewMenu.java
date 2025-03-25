@@ -2,13 +2,14 @@ package view;
 
 public class ViewMenu {
     public int ViewMenu() {
+        int opcion=0;
         System.out.println("\n ****** - Menu principal - ******");
         System.out.println("1-Crear iniciativa.");
         System.out.println("2-Ver actividades.");
-        System.out.println("3-Cambiar de estado".);
+        System.out.println("3-Cambiar de estado");
         System.out.println("****** - -------------- - ****** \n");
         do {
-            opcion = Utils.leeEntero(scanner, 1, 3);
+            opcion = utils.Utils.leeEntero("Elige una opción:");
             if (opcion < 1 || opcion > 3) {
                 System.out.println("Opción no válida. Por favor, ingrese un número entre 1 y 3.");
             }

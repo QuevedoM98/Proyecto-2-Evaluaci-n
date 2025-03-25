@@ -1,5 +1,6 @@
 package model;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,4 +41,9 @@ public class Creador extends Usuario {
     public void asignarVoluntario(Actividad actividad, Colaborador voluntario) {
         actividad.asignarVoluntario(voluntario);
     }
+
+import java.io.Serializable;
+
+public class Creador implements Serializable {
+
 }

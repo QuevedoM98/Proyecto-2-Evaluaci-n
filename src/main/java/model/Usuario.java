@@ -1,5 +1,6 @@
 package model;
 
+
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -80,3 +81,9 @@ public class Usuario {
         return false;
     }
 }
+
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
+}
+

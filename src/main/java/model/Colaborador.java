@@ -1,6 +1,7 @@
 package model;
 
 public class Colaborador extends Usuario {
+
     private int puntos;
 
     public Colaborador(String nombre, String usuario, String contrasena, String correoElectronico) {
@@ -16,3 +17,6 @@ public class Colaborador extends Usuario {
         this.puntos += puntos;
     }
 }
+
+}
+

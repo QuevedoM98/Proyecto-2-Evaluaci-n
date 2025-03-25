@@ -14,14 +14,15 @@ public class Sesion {
     }
 
     public boolean iniciarSesion(Usuario usuario) {
+        boolean iniciado = false;
         if (usuarioActual == null) {
             this.usuarioActual = usuario;
             System.out.println("Sesión iniciada para " + usuario.getNombre());
-            return true;
+            iniciado = true;
         } else {
             System.out.println("Ya hay una sesión activa.");
-            return false;
         }
+        return iniciado;
     }
 
     public void cerrarSesion() {

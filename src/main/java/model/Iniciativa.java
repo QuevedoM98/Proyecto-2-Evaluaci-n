@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Iniciativa {
+public class Iniciativa implements Serializable {
     private String nombre;
     private String descripcion;
     private String creador;

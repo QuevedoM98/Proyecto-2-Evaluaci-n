@@ -2,5 +2,5 @@ package model;
 
 import java.io.Serializable;
 
-public class Usuario implements Serializable {
+public class Creador implements Serializable {
 }

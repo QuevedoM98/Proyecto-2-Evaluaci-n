@@ -1,6 +1,89 @@
 package model;
 
+
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+
+public class Usuario {
+    private String nombre;
+    private String usuario;
+    private String contrasenaHash;
+    private String correoElectronico;
+    private static ArrayList<Usuario> usuarios = new ArrayList<>();
+
+    public Usuario(String nombre, String usuario, String contrasena, String correoElectronico) {
+        if (usuarioExiste(usuario)) {
+            throw new IllegalArgumentException("El usuario ya existe");
+        }
+        this.nombre = nombre;
+        this.usuario = usuario;
+        setContrasena(contrasena);
+        setCorreoElectronico(correoElectronico);
+        usuarios.add(this);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasenaHash() {
+        return contrasenaHash;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasenaHash = hashContrasena(contrasena);
+    }
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        if (validarCorreoElectronico(correoElectronico)) {
+            this.correoElectronico = correoElectronico;
+        } else {
+            throw new IllegalArgumentException("Correo electrónico no válido");
+        }
+    }
+
+    public static ArrayList<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    private boolean validarCorreoElectronico(String correo) {
+        String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+        Pattern pattern = Pattern.compile(regex);
+        return pattern.matcher(correo).matches();
+    }
+
+    private String hashContrasena(String contrasena) {
+        return Integer.toHexString(contrasena.hashCode());
+    }
+
+    private boolean usuarioExiste(String usuario) {
+        for (Usuario u : usuarios) {
+            if (u.getUsuario().equals(usuario)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
 import java.io.Serializable;
 
 public class Usuario implements Serializable {
 }
+

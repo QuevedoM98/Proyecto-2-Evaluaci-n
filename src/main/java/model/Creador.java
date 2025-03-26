@@ -1,6 +1,6 @@
 package model;
 
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,19 +26,29 @@ public class Creador extends Usuario {
         return actividades;
     }
 
-    public void crearActividad(String nombre) {
-        actividades.add(new Actividad(nombre));
+    public void crearActividad(String nombre, String descripcion, LocalDate fechaInicio, LocalDate fechaFin) {
+        if (fechaInicio.isAfter(fechaFin)) {
+            throw new IllegalArgumentException("La fecha de inicio no puede ser posterior a la fecha de finalización.");
+        }
+        Actividad actividad = new Actividad(nombre, descripcion, fechaInicio, fechaFin, this);
+        actividades.add(actividad);
     }
 
     public void eliminarActividad(Actividad actividad) {
         actividades.remove(actividad);
     }
 
-    public void actualizarActividad(Actividad actividad, String nuevoNombre) {
+    public void actualizarActividad(Actividad actividad, String nuevoNombre, String nuevaDescripcion, LocalDate nuevaFechaInicio, LocalDate nuevaFechaFin) {
+        if (nuevaFechaInicio.isAfter(nuevaFechaFin)) {
+            throw new IllegalArgumentException("La fecha de inicio no puede ser posterior a la fecha de finalización.");
+        }
         actividad.setNombre(nuevoNombre);
+        actividad.setDescripcion(nuevaDescripcion);
+        actividad.setFechaInicio(nuevaFechaInicio);
+        actividad.setFechaFin(nuevaFechaFin);
     }
 
     public void asignarVoluntario(Actividad actividad, Colaborador voluntario) {
-        actividad.asignarVoluntario(voluntario);
+        actividad.setVoluntario(voluntario);
     }
-
+}

@@ -52,5 +52,3 @@ public class Creador extends Usuario {
         actividad.setVoluntario(voluntario);
     }
 }
-
-

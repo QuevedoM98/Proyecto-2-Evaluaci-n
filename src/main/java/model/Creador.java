@@ -42,8 +42,3 @@ public class Creador extends Usuario {
         actividad.asignarVoluntario(voluntario);
     }
 
-import java.io.Serializable;
-
-public class Creador implements Serializable {
-
-}

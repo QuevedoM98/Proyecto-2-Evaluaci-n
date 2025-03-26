@@ -18,5 +18,5 @@ public class Colaborador extends Usuario {
     }
 }
 
-}
+
 

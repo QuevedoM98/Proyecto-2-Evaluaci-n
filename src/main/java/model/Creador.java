@@ -51,4 +51,8 @@ public class Creador extends Usuario {
     public void asignarVoluntario(Actividad actividad, Colaborador voluntario) {
         actividad.setVoluntario(voluntario);
     }
+
+    public  List<Iniciativa> getIniciativas() {
+        return getIniciativas();
+    }
 }

@@ -1,6 +1,9 @@
 package model;
 
 
+import exceptions.ContrasenaIncorrectaException;
+import exceptions.UsuarioNoEncontradoException;
+
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -12,14 +15,17 @@ public class Usuario {
     private static ArrayList<Usuario> usuarios = new ArrayList<>();
 
     public Usuario(String nombre, String usuario, String contrasena, String correoElectronico) {
-        if (usuarioExiste(usuario)) {
-            throw new IllegalArgumentException("El usuario ya existe");
-        }
         this.nombre = nombre;
         this.usuario = usuario;
         setContrasena(contrasena);
         setCorreoElectronico(correoElectronico);
         usuarios.add(this);
+        if (!this.usuario.equals(usuario)) {
+            throw new UsuarioNoEncontradoException("Usuario no encontrado.");
+        }
+        if (!this.contrasenaHash.equals(contrasena)) {
+            throw new ContrasenaIncorrectaException("Contraseña incorrecta.");
+        }
     }
 
     public String getNombre() {
@@ -79,6 +85,8 @@ public class Usuario {
             }
         }
         return false;
+
+
     }
 }
 

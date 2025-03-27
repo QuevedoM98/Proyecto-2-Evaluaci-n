@@ -15,7 +15,6 @@ public class PersistenciaXML {
             JAXBContext context = JAXBContext.newInstance(clase);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
             marshaller.marshal(datos, new File(archivoXML));
             System.out.println("Datos guardados en " + archivoXML);
         } catch (JAXBException e) {

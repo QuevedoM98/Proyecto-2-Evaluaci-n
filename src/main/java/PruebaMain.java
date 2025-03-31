@@ -7,8 +7,6 @@ import utils.Utils;
 
 public class PruebaMain {
 
-
-    public class Main {
         public static void main(String[] args) {
             UserController userController = new UserController();
             IniciativaController iniciativaController = new IniciativaController();
@@ -65,4 +63,3 @@ public class PruebaMain {
             }
         }
     }
-}

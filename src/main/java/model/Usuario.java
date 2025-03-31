@@ -88,5 +88,9 @@ public class Usuario {
 
 
     }
+
+    public boolean verificarContrasena(String contrasena) {
+        return this.contrasenaHash.equals(hashContrasena(contrasena));
+    }
 }
 

@@ -1,11 +1,18 @@
 package model;
 
-
 import exceptions.ContrasenaIncorrectaException;
 import exceptions.UsuarioNoEncontradoException;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
+
+@XmlRootElement(name = "Actividad")
+@XmlAccessorType(XmlAccessType.FIELD)
 
 public class Usuario {
     private String nombre;
@@ -93,4 +100,5 @@ public class Usuario {
         return this.contrasenaHash.equals(hashContrasena(contrasena));
     }
 }
+
 

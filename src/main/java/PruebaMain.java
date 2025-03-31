@@ -1,29 +1,68 @@
-import model.PersistenciaXML;
-import model.Usuario;
-import java.util.ArrayList;
-import java.util.List;
+import controller.UserController;
+import controller.IniciativaController;
+import model.Creador;
+import model.Sesion;
+import utils.Utils;
+
 
 public class PruebaMain {
 
-    public static void main(String[] args) {
-        // Crear lista de usuarios
-        List<Usuario> usuarios = new ArrayList<>();
-        Usuario usuario1 = new Usuario();
-        Usuario usuario2 = new Usuario();
-        usuarios.add(usuario1);
-        usuarios.add(usuario2);
 
-        // Guardar usuarios en XML
-        PersistenciaXML.guardarUsuarios(usuarios);
+    public class Main {
+        public static void main(String[] args) {
+            UserController userController = new UserController();
+            IniciativaController iniciativaController = new IniciativaController();
 
-        // Cargar usuarios desde XML
-        List<Usuario> usuariosCargados = PersistenciaXML.cargarUsuarios();
+            while (true) {
+                System.out.println("1. Registrar Usuario");
+                System.out.println("2. Iniciar Sesión");
+                System.out.println("3. Crear Iniciativa");
+                System.out.println("4. Listar Iniciativas");
+                System.out.println("5. Cerrar Sesión");
+                System.out.println("6. Salir");
 
-        // Verificar que los usuarios cargados son los mismos que los guardados
-        if (usuarios.size() == usuariosCargados.size()) {
-            System.out.println("Prueba exitosa: Los usuarios se guardaron y cargaron correctamente.");
-        } else {
-            System.out.println("Prueba fallida: La lista de usuarios cargados no coincide con la lista guardada.");
+                int opcion = Utils.leeEntero("Selecciona una opción: ");
+
+                switch (opcion) {
+                    case 1:
+                        String nombre = Utils.pideString("Nombre: ");
+                        String usuario = Utils.pideString("Usuario: ");
+                        String contrasena = Utils.pideString("Contraseña: ");
+                        String correo = Utils.pideString("Correo Electrónico: ");
+                        userController.registrarUsuario(nombre, usuario, contrasena, correo);
+                        break;
+                    case 2:
+                        usuario = Utils.pideString("Usuario: ");
+                        contrasena = Utils.pideString("Contraseña: ");
+                        userController.iniciarSesion(usuario, contrasena);
+                        break;
+                    case 3:
+                        if (Sesion.getInstance().getUsuarioActual() instanceof Creador) {
+                            String nombreIniciativa = Utils.pideString("Nombre de la Iniciativa: ");
+                            String descripcion = Utils.pideString("Descripción: ");
+                            Creador creador = (Creador) Sesion.getInstance().getUsuarioActual();
+                            iniciativaController.crearIniciativa(nombreIniciativa, descripcion, creador);
+                        } else {
+                            System.out.println("Solo los creadores pueden crear iniciativas.");
+                        }
+                        break;
+                    case 4:
+                        iniciativaController.listarIniciativas().forEach(i -> {
+                            System.out.println("Nombre: " + i.getNombreIniciativa());
+                            System.out.println("Descripción: " + i.getDescripcion());
+                            System.out.println("Creador: " + i.getCreador().getNombre());
+                        });
+                        break;
+                    case 5:
+                        userController.cerrarSesion();
+                        break;
+                    case 6:
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("Opción no válida.");
+                }
+            }
         }
     }
 }

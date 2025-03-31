@@ -1,11 +1,14 @@
-
-
-
 package model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlRootElement(name = "Colaborador")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Colaborador extends Usuario {
 
     private int puntos;

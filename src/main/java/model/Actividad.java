@@ -1,8 +1,13 @@
 package model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+@XmlRootElement(name = "Actividad")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Actividad implements Serializable {
     private String nombre;
     private String descripcion;

@@ -1,9 +1,15 @@
 package model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlRootElement(name = "Creador")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Creador extends Usuario {
     private String nombreONG;
     private List<Actividad> actividades;

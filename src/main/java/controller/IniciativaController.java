@@ -1,28 +1,22 @@
 package controller;
 
-import model.Creador;
+import DataAccess.XMLManager;
 import model.Iniciativa;
-import model.PersistenciaXML;
+import model.WrapperIniciativa;
+import model.Creador;
 
 import java.util.List;
 
 public class IniciativaController {
 
-    public boolean crearIniciativa(String nombreIniciativa, String descripcion, Creador creador) {
-        List<Iniciativa> iniciativas = PersistenciaXML.cargarDatos(Iniciativa.class, "Iniciativas.xml");
-        for (Iniciativa i : iniciativas) {
-            if (i.getNombreIniciativa().equals(nombreIniciativa)) {
-                System.out.println("El nombre de la iniciativa ya está en uso.");
-                return false;
-            }
-        }
+    public void crearIniciativa(String nombreIniciativa, String descripcion, Creador creador) {
+        List<Iniciativa> iniciativas = XMLManager.readXML(WrapperIniciativa.class, Iniciativa.class, "Iniciativas.xml");
         Iniciativa nuevaIniciativa = new Iniciativa(nombreIniciativa, descripcion, creador);
         iniciativas.add(nuevaIniciativa);
-        PersistenciaXML.guardarDatos(iniciativas, Iniciativa.class, "Iniciativas.xml");
-        return true;
+        XMLManager.writeXML(WrapperIniciativa.class, iniciativas, "Iniciativas.xml");
     }
 
     public List<Iniciativa> listarIniciativas() {
-        return PersistenciaXML.cargarDatos(Iniciativa.class, "Iniciativas.xml");
+        return XMLManager.readXML(WrapperIniciativa.class, Iniciativa.class, "Iniciativas.xml");
     }
 }

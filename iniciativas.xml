@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<iniciativas>
+    <iniciativa>
+        <nombreIniciativa>Iniciativa 1</nombreIniciativa>
+        <descripcion>Descripción de la Iniciativa 1</descripcion>
+        <creador>
+            <nombre>Juan Pérez</nombre>
+            <usuario>juan123</usuario>
+            <contrasenaHash>hash123</contrasenaHash>
+            <correoElectronico>juanperez@mail.com</correoElectronico>
+            <nombreONG>Fundación X</nombreONG>
+        </creador>
+    </iniciativa>
+    <iniciativa>
+        <nombreIniciativa>Iniciativa 2</nombreIniciativa>
+        <descripcion>Descripción de la Iniciativa 2</descripcion>
+        <creador>
+            <nombre>Ana García</nombre>
+            <usuario>ana456</usuario>
+            <contrasenaHash>hash456</contrasenaHash>
+            <correoElectronico>anagarcia@mail.com</correoElectronico>
+            <nombreONG>Fundación Y</nombreONG>
+        </creador>
+    </iniciativa>
+</iniciativas>

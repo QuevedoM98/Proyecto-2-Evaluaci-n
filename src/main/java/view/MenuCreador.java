@@ -50,20 +50,36 @@ public class MenuCreador {
     }
 
     private void crearActividad() {
-
+        System.out.println("Ingrese el nombre de la actividad:");
+        String nombre = scanner.nextLine();
+        System.out.println("Ingrese la descripción de la actividad:");
+        String descripcion = scanner.nextLine();
+        // Implementar lógica para crear actividad
+        System.out.println("Actividad creada exitosamente.");
     }
 
     private void eliminarActividad() {
-
+        System.out.println("Ingrese el nombre de la actividad a eliminar:");
+        String nombre = scanner.nextLine();
+        // Implementar lógica para eliminar actividad
+        System.out.println("Actividad eliminada exitosamente.");
     }
 
     private void actualizarActividad() {
-
-        }
-
+        System.out.println("Ingrese el nombre de la actividad a actualizar:");
+        String nombre = scanner.nextLine();
+        System.out.println("Ingrese la nueva descripción de la actividad:");
+        String descripcion = scanner.nextLine();
+        // Implementar lógica para actualizar actividad
+        System.out.println("Actividad actualizada exitosamente.");
+    }
 
     private void asignarVoluntario() {
-
-
+        System.out.println("Ingrese el nombre del voluntario:");
+        String nombreVoluntario = scanner.nextLine();
+        System.out.println("Ingrese el nombre de la actividad:");
+        String nombreActividad = scanner.nextLine();
+        // Implementar lógica para asignar voluntario a actividad
+        System.out.println("Voluntario asignado exitosamente.");
     }
 }

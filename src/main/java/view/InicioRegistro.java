@@ -1,13 +1,17 @@
 package view;
-import model.Usuario;
-import model.Creador;
-import model.Colaborador;
+import DataAccess.XMLManager;
+import model.*;
+import controller.UserController;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class InicioRegistro {
     private Scanner scanner = new Scanner(System.in);
+    private UserController userController = new UserController();
 
-    public void mostrarMenu() {
+    public Usuario mostrarMenu() {
         while (true) {
             System.out.println("1- Iniciar Sesión");
             System.out.println("2- Registrarse");
@@ -16,75 +20,46 @@ public class InicioRegistro {
             scanner.nextLine();
             switch (opcion) {
                 case 1:
-                    iniciarSesion();
-                    break;
+                    Usuario usuario = iniciarSesion();
+                    if (usuario != null) {
+                        userController.iniciarSesion(usuario.getUsuario(), usuario.getContrasenaHash());
+                    }
+                    return usuario;
                 case 2:
                     registrarUsuario();
                     break;
                 case 3:
                     System.out.println("Saliendo...");
-                    return;
+                    return null;
                 default:
                     System.out.println("Opción no válida");
                     break;
             }
         }
     }
-    private void iniciarSesion() {
-        System.out.println("Ingrese su nombre de usuario:");
-        String usuario = scanner.nextLine();
-        System.out.println("Ingrese su contraseña:");
-        String contraseña = scanner.nextLine();
-        Usuario user = autenticarUsuario(usuario, contraseña);
-        if (user != null) {
-            if (user instanceof Creador) {
-                mostrarMenuCreador((Creador) user);
-            } else if (user instanceof Colaborador) {
-                mostrarMenuColaborador((Colaborador) user);
-            } else {
-                System.out.println("Tipo de usuario no válido.");
-            }
-        } else {
-            System.out.println("Credenciales incorrectas.");
-        }
-    }
-    private Usuario autenticarUsuario(String usuario, String contrasena) {
-        for (Usuario u : Usuario.getUsuarios()) {
-            if (u.getUsuario().equals(usuario) && u.getContrasenaHash().equals(Integer.toHexString(contrasena.hashCode()))) {
-                return u;
-            }
-        }
-        return null;
-    }
-    private void registrarUsuario() {
-        System.out.println("Registro de nuevo usuario:");
-        System.out.println("Ingrese su nombre:");
-        String nombre = scanner.nextLine();
+
+    private Usuario iniciarSesion() {
         System.out.println("Ingrese su nombre de usuario:");
         String usuario = scanner.nextLine();
         System.out.println("Ingrese su contraseña:");
         String contrasena = scanner.nextLine();
-        String correoElectronico = scanner.nextLine();
-        System.out.println("¿Será usted Creador o Colaborador? (Creador/Colaborador)");
-        String tipoUsuario = scanner.nextLine();
-
-        if (tipoUsuario.equalsIgnoreCase("Creador")) {
-            System.out.println("Ingrese el nombre de la ONG:");
-            String nombreONG = scanner.nextLine();
-            new Creador(nombre, usuario, contrasena, correoElectronico, nombreONG);
-        } else if (tipoUsuario.equalsIgnoreCase("Colaborador")) {
-            new Colaborador(nombre, usuario, contrasena, correoElectronico);
+        String contrasenaHash = Usuario.hashContrasena(contrasena); // Generar hash de la contraseña aquí
+        System.out.println("Hash de la contraseña ingresada: " + contrasenaHash); // Mensaje de depuración
+        Usuario usuarioEncontrado = userController.buscarUsuario(usuario, contrasenaHash);
+        if (usuarioEncontrado != null) {
+            System.out.println("Inicio de sesión exitoso.");
+            return usuarioEncontrado;
         } else {
-            System.out.println("Tipo de usuario no válido.");
+            System.out.println("Nombre de usuario o contraseña incorrectos.");
+            return null;
         }
-        System.out.println("Usuario registrado exitosamente.");
     }
-    private void mostrarMenuCreador(Creador creador) {
-        MenuCreador menuCreador = new MenuCreador(creador);
-        menuCreador.mostrarMenu();
+
+    private void registrarUsuario() {
+        userController.registrarUsuario();
     }
-    private void mostrarMenuColaborador(Colaborador colaborador) {
-        MenuColaborador menuColaborador = new MenuColaborador(colaborador);
-        menuColaborador.mostrarMenu();
+
+    private String generarHash(String contrasena) {
+        return Integer.toHexString(contrasena.hashCode());
     }
 }

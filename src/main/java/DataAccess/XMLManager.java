@@ -1,51 +1,50 @@
-/*
 package DataAccess;
 
-import model.ColeccionPersonas;
+import model.Wrapper;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class XMLManager {
-    public static <T> boolean writeXML(T objeto, String fileName) {
-        boolean result = false;
-        try {
-            //Paso 1: Crear el contexto de JaxB para la clase que queremos serializar
-            JAXBContext context = JAXBContext.newInstance(objeto.getClass());
 
-            //Paso 2: proceso Marshalling: convertir objeto en XML
-            Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
-            marshaller.marshal(objeto,new File(fileName));
-            result = true;
-
-        } catch (JAXBException e) {
-            throw new RuntimeException(e);
+    public static <T> List<T> readXML(Class<? extends Wrapper<T>> wrapperClass, Class<T> clazz, String archivoXML) {
+        File archivo = new File(archivoXML);
+        if (!archivo.exists() || archivo.length() == 0) {
+            System.out.println("Archivo no encontrado o vacío. Inicializando archivo.");
+            return new ArrayList<>();
         }
 
-        return result;
+        try {
+            JAXBContext context = JAXBContext.newInstance(wrapperClass);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Wrapper<T> wrapper = wrapperClass.cast(unmarshaller.unmarshal(archivo));
+            List<T> items = wrapper.getItems();
+            System.out.println("Leído del archivo " + archivoXML + ": " + (items != null ? items.size() : 0) + " elementos.");
+            return items != null ? items : new ArrayList<>();
+        } catch (JAXBException e) {
+            e.printStackTrace(); // Añadido para depuración
+            throw new RuntimeException("Error al leer el archivo XML", e);
+        }
     }
 
-    public static <T> T readXML(T objeto, String fileName) {
-        T result = null;
+    public static <T> void writeXML(Class<? extends Wrapper<T>> wrapperClass, List<T> lista, String archivoXML) {
         try {
-            //Paso 1: Crear el contexto de JaxB para la clase que queremos serializar
-            JAXBContext context = JAXBContext.newInstance(objeto.getClass());
+            JAXBContext context = JAXBContext.newInstance(wrapperClass);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-            //Paso 2: Unmarshaling: leer XML y convertirlo a un objeto
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            result = (T) unmarshaller.unmarshal(new File(fileName));
+            Wrapper<T> wrapper = wrapperClass.getDeclaredConstructor().newInstance();
+            wrapper.setItems(lista);
 
-
-        } catch (JAXBException e) {
-            throw new RuntimeException(e);
+            marshaller.marshal(wrapper, new File(archivoXML));
+            System.out.println("Escrito en el archivo " + archivoXML + ": " + lista.size() + " elementos.");
+        } catch (JAXBException | ReflectiveOperationException e) {
+            throw new RuntimeException("Error al escribir el archivo XML", e);
         }
-
-        return result;
     }
 }
-*/

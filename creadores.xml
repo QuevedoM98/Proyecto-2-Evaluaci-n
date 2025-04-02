@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<creadores>
+    <creador>
+        <nombre>pp</nombre>
+        <usuario>pp</usuario>
+        <contrasenaHash>e00</contrasenaHash>
+        <correoElectronico>pp@gm.es</correoElectronico>
+        <nombreONG>ss</nombreONG>
+    </creador>
+    <creador>
+        <nombre>a</nombre>
+        <usuario>a</usuario>
+        <contrasenaHash>61</contrasenaHash>
+        <correoElectronico>a@gm.es</correoElectronico>
+        <nombreONG>a</nombreONG>
+    </creador>
+</creadores>

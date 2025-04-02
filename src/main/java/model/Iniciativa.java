@@ -2,17 +2,21 @@ package model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-@XmlRootElement(name = "Colaborador")
+@XmlRootElement(name = "iniciativa")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Iniciativa implements Serializable{
+public class Iniciativa {
+    @XmlElement
     private String nombreIniciativa;
+    @XmlElement
     private String descripcion;
+    @XmlElement
     private Creador creador;
+
+    public Iniciativa() {
+    }
 
     public Iniciativa(String nombreIniciativa, String descripcion, Creador creador) {
         this.nombreIniciativa = nombreIniciativa;
@@ -24,12 +28,23 @@ public class Iniciativa implements Serializable{
         return nombreIniciativa;
     }
 
+    public void setNombreIniciativa(String nombreIniciativa) {
+        this.nombreIniciativa = nombreIniciativa;
+    }
+
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Creador getCreador() {
         return creador;
     }
 
+    public void setCreador(Creador creador) {
+        this.creador = creador;
+    }
 }

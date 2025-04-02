@@ -2,44 +2,32 @@ package model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name = "Colaborador")
+@XmlRootElement(name = "colaborador")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Colaborador extends Usuario {
+    @XmlElement
+    private List<Actividad> listaActividades;
 
-    private int puntos;
-    private List<Actividad> actividades;
+    public Colaborador() {
+        this.listaActividades = new ArrayList<>();
 
-    public Colaborador(String nombre, String usuario, String contrasena, String correoElectronico) {
-        super(nombre, usuario, contrasena, correoElectronico);
-        this.puntos = 0;
-        this.actividades = new ArrayList<>();
     }
 
-    public int getPuntos() {
-        return puntos;
+    public Colaborador(String nombre, String usuario, String contrasenaHash, String correoElectronico) {
+        super(nombre, usuario, contrasenaHash, correoElectronico);
+        this.listaActividades = new ArrayList<>();
     }
 
-    public void incrementarPuntos(int puntos) {
-        this.puntos += puntos;
+    public List<Actividad> getListaActividades() {
+        return listaActividades;
     }
 
-    public List<Actividad> getActividades() {
-        return actividades;
-    }
-
-    public void agregarActividad(Actividad actividad) {
-        actividades.add(actividad);
-    }
-
-    public void eliminarActividad(Actividad actividad) {
-        actividades.remove(actividad);
+    public void setListaActividades(List<Actividad> listaActividades) {
+        this.listaActividades = listaActividades;
     }
 }
-
-
-

@@ -1,39 +1,34 @@
+// Usuario.java
 package model;
-
-import exceptions.ContrasenaIncorrectaException;
-import exceptions.UsuarioNoEncontradoException;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-@XmlRootElement(name = "Actividad")
+@XmlRootElement(name = "Usuario")
 @XmlAccessorType(XmlAccessType.FIELD)
-
-public class Usuario {
+public class Usuario implements Serializable {
     private String nombre;
     private String usuario;
     private String contrasenaHash;
     private String correoElectronico;
     private static ArrayList<Usuario> usuarios = new ArrayList<>();
 
+    public Usuario() {} // Constructor vacío necesario para JAXB
+
     public Usuario(String nombre, String usuario, String contrasena, String correoElectronico) {
         this.nombre = nombre;
         this.usuario = usuario;
-        setContrasena(contrasena);
+        setContrasenaHash(contrasena);
         setCorreoElectronico(correoElectronico);
         usuarios.add(this);
-        if (!this.usuario.equals(usuario)) {
-            throw new UsuarioNoEncontradoException("Usuario no encontrado.");
-        }
-        if (!this.contrasenaHash.equals(contrasena)) {
-            throw new ContrasenaIncorrectaException("Contraseña incorrecta.");
-        }
     }
+
+    // Getters y setters...
+
 
     public String getNombre() {
         return nombre;
@@ -55,8 +50,8 @@ public class Usuario {
         return contrasenaHash;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasenaHash = hashContrasena(contrasena);
+    public void setContrasenaHash(String contrasenaHash) {
+        this.contrasenaHash = contrasenaHash;
     }
 
     public String getCorreoElectronico() {
@@ -64,15 +59,15 @@ public class Usuario {
     }
 
     public void setCorreoElectronico(String correoElectronico) {
-        if (validarCorreoElectronico(correoElectronico)) {
-            this.correoElectronico = correoElectronico;
-        } else {
-            throw new IllegalArgumentException("Correo electrónico no válido");
-        }
+        this.correoElectronico = correoElectronico;
     }
 
     public static ArrayList<Usuario> getUsuarios() {
         return usuarios;
+    }
+
+    public static void setUsuarios(ArrayList<Usuario> usuarios) {
+        Usuario.usuarios = usuarios;
     }
 
     private boolean validarCorreoElectronico(String correo) {
@@ -85,20 +80,7 @@ public class Usuario {
         return Integer.toHexString(contrasena.hashCode());
     }
 
-    private boolean usuarioExiste(String usuario) {
-        for (Usuario u : usuarios) {
-            if (u.getUsuario().equals(usuario)) {
-                return true;
-            }
-        }
-        return false;
-
-
-    }
-
     public boolean verificarContrasena(String contrasena) {
         return this.contrasenaHash.equals(hashContrasena(contrasena));
     }
 }
-
-

@@ -5,7 +5,8 @@ import model.Iniciativa;
 
 import java.util.List;
 
-public class ViewConsola {
+public class
+  ViewConsola {
 
     public void listarIniciativas(Creador creador) {
         List<Iniciativa> iniciativas = creador.getIniciativas();

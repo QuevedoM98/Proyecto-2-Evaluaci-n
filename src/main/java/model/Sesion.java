@@ -1,7 +1,6 @@
 package model;
 
-import model.PersistenciaXML;
-import model.Usuario;
+import DataAccess.XMLManager;
 
 import java.util.List;
 
@@ -21,15 +20,29 @@ public class Sesion {
     public boolean iniciarSesion(String nombreUsuario, String contrasena) {
         boolean iniciado = false;
         if (usuarioActual == null) {
-            List<Usuario> usuarios = PersistenciaXML.cargarDatos(Usuario.class, "Usuarios.xml");
-            for (Usuario usuario : usuarios) {
-                if (usuario.getUsuario().equals(nombreUsuario) && usuario.verificarContrasena(contrasena)) {
-                    this.usuarioActual = usuario;
-                    System.out.println("Sesión iniciada para " + usuario.getNombre());
+            List<Creador> creadores = XMLManager.readXML(WrapperCreador.class, Creador.class, "creadores.xml");
+            List<Colaborador> colaboradores = XMLManager.readXML(WrapperColaborador.class, Colaborador.class, "colaboradores.xml");
+
+            for (Creador creador : creadores) {
+                if (verificarCredenciales(creador, nombreUsuario, contrasena)) {
+                    this.usuarioActual = creador;
+                    System.out.println("Sesión iniciada para " + creador.getNombre());
                     iniciado = true;
                     break;
                 }
             }
+
+            if (!iniciado) {
+                for (Colaborador colaborador : colaboradores) {
+                    if (verificarCredenciales(colaborador, nombreUsuario, contrasena)) {
+                        this.usuarioActual = colaborador;
+                        System.out.println("Sesión iniciada para " + colaborador.getNombre());
+                        iniciado = true;
+                        break;
+                    }
+                }
+            }
+
             if (!iniciado) {
                 System.out.println("Usuario o contraseña incorrectos.");
             }
@@ -39,6 +52,14 @@ public class Sesion {
         return iniciado;
     }
 
+    private boolean verificarCredenciales(Usuario usuario, String nombreUsuario, String contrasena) {
+        return usuario.getUsuario().equals(nombreUsuario) && usuario.verificarContrasena(contrasena);
+    }
+
+    public boolean haySesionActiva() {
+        return usuarioActual != null;
+    }
+
     public void cerrarSesion() {
         if (usuarioActual != null) {
             System.out.println("Sesión cerrada para " + usuarioActual.getNombre());
@@ -46,6 +67,10 @@ public class Sesion {
         } else {
             System.out.println("No hay sesión activa.");
         }
+    }
+
+    public boolean esCreador() {
+        return usuarioActual instanceof Creador;
     }
 
     public Usuario getUsuarioActual() {

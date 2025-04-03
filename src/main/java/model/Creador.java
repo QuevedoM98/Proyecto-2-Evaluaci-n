@@ -2,22 +2,24 @@ package model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name = "Creador")
+@XmlRootElement(name = "creador")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Creador extends Usuario {
+    @XmlElement
     private String nombreONG;
-    private List<Actividad> actividades;
+    @XmlElement
+    private List<Iniciativa> iniciativas;
 
-    public Creador(String nombre, String usuario, String contrasena, String correoElectronico, String nombreONG) {
-        super(nombre, usuario, contrasena, correoElectronico);
+    public Creador() {
+    }
+
+    public Creador(String nombre, String usuario, String contrasenaHash, String correoElectronico, String nombreONG) {
+        super(nombre, usuario, contrasenaHash, correoElectronico);
         this.nombreONG = nombreONG;
-        this.actividades = new ArrayList<>();
     }
 
     public String getNombreONG() {
@@ -28,37 +30,11 @@ public class Creador extends Usuario {
         this.nombreONG = nombreONG;
     }
 
-    public List<Actividad> getActividades() {
-        return actividades;
+    public List<Iniciativa> getIniciativas() {
+        return iniciativas;
     }
 
-    public void crearActividad(String nombre, String descripcion, LocalDate fechaInicio, LocalDate fechaFin) {
-        if (fechaInicio.isAfter(fechaFin)) {
-            throw new IllegalArgumentException("La fecha de inicio no puede ser posterior a la fecha de finalización.");
-        }
-        Actividad actividad = new Actividad(nombre, descripcion, fechaInicio, fechaFin, this);
-        actividades.add(actividad);
-    }
-
-    public void eliminarActividad(Actividad actividad) {
-        actividades.remove(actividad);
-    }
-
-    public void actualizarActividad(Actividad actividad, String nuevoNombre, String nuevaDescripcion, LocalDate nuevaFechaInicio, LocalDate nuevaFechaFin) {
-        if (nuevaFechaInicio.isAfter(nuevaFechaFin)) {
-            throw new IllegalArgumentException("La fecha de inicio no puede ser posterior a la fecha de finalización.");
-        }
-        actividad.setNombre(nuevoNombre);
-        actividad.setDescripcion(nuevaDescripcion);
-        actividad.setFechaInicio(nuevaFechaInicio);
-        actividad.setFechaFin(nuevaFechaFin);
-    }
-
-    public void asignarVoluntario(Actividad actividad, Colaborador voluntario) {
-        actividad.setVoluntario(voluntario);
-    }
-
-    public  List<Iniciativa> getIniciativas() {
-        return getIniciativas();
+    public void setIniciativas(List<Iniciativa> iniciativas) {
+        this.iniciativas = iniciativas;
     }
 }

@@ -1,16 +1,33 @@
 package controller;
 
 import DataAccess.XMLManager;
-import model.Actividad;
-import model.Iniciativa;
-import model.WrapperIniciativa;
-import model.WrapperActividad;
-import model.Colaborador;
+import model.*;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class IniciativaController {
+
+    /**
+     * Asigna puntos aleatorios a las actividades que no tienen puntos y actualiza los puntos de los colaboradores.
+     */
+    private void asignarPuntosAleatorios(List<Iniciativa> iniciativas) {
+        Random random = new Random();
+        for (Iniciativa iniciativa : iniciativas) {
+            for (Actividad actividad : iniciativa.getActividades()) {
+                if (actividad.getPuntos() == 0) {
+                    int puntosAleatorios = random.nextInt(100) + 1; // Asignar puntos aleatorios entre 1 y 100
+                    actividad.setPuntos(puntosAleatorios);
+                    if (actividad.getVoluntariosAsignados() != null) {
+                        for (Colaborador voluntario : actividad.getVoluntariosAsignados()) {
+                            voluntario.agregarPuntos(puntosAleatorios);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     /**
      * Guarda una lista de iniciativas en un archivo XML.
@@ -18,6 +35,7 @@ public class IniciativaController {
      */
     public void guardarIniciativas(List<Iniciativa> iniciativas) {
         try {
+            asignarPuntosAleatorios(iniciativas); // Asignar puntos aleatorios antes de guardar
             XMLManager.writeXML(WrapperIniciativa.class, iniciativas, "iniciativas.xml");
         } catch (Exception e) {
             System.err.println("Error al guardar iniciativas: " + e.getMessage());
@@ -156,7 +174,7 @@ public class IniciativaController {
                             actividad.setVoluntariosAsignados(new ArrayList<>());
                         }
                         actividad.getVoluntariosAsignados().add(voluntario);
-                        voluntario.agregarPuntos(actividad.getPuntos()); // Agregar puntos de la actividad al voluntario
+                        actualizarPuntosColaborador(voluntario, actividad.getPuntos());
                         guardarIniciativas(iniciativas);
                         return;
                     }
@@ -182,7 +200,7 @@ public class IniciativaController {
                             actividad.setVoluntariosAsignados(new ArrayList<>());
                         }
                         actividad.getVoluntariosAsignados().add(colaborador);
-                        colaborador.agregarPuntos(actividad.getPuntos());
+                        actualizarPuntosColaborador(colaborador, actividad.getPuntos());
                         guardarIniciativas(iniciativas);
                         return;
                     }
@@ -213,5 +231,17 @@ public class IniciativaController {
             }
         }
         return actividadesInscritas;
+    }
+
+    private void actualizarPuntosColaborador(Colaborador colaborador, int puntos) {
+        colaborador.agregarPuntos(puntos);
+        List<Colaborador> colaboradores = XMLManager.readXML(WrapperColaborador.class, Colaborador.class, "colaboradores.xml");
+        for (Colaborador c : colaboradores) {
+            if (c.getUsuario().equals(colaborador.getUsuario())) {
+                c.setPuntos(colaborador.getPuntos());
+                break;
+            }
+        }
+        XMLManager.writeXML(WrapperColaborador.class, colaboradores, "colaboradores.xml");
     }
 }

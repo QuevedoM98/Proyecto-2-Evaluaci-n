@@ -13,7 +13,7 @@ public class Colaborador extends Usuario {
     @XmlElement
     private List<Actividad> listaActividades;
     @XmlElement
-    private int puntos; // Añadir atributo puntos
+    private int puntos; // Asegurar que el atributo puntos se serialice
 
     public Colaborador() {
         this.listaActividades = new ArrayList<>();
@@ -43,6 +43,10 @@ public class Colaborador extends Usuario {
 
     public int getPuntos() {
         return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
     }
 
     /**

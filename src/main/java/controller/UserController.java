@@ -37,6 +37,7 @@ public class UserController {
             return creador;
         } else {
             Colaborador colaborador = new Colaborador(nombre, usuario, contrasenaHash, correoElectronico);
+            colaborador.setPuntos(0); // Inicializar puntos
             List<Colaborador> colaboradores = XMLManager.readXML(WrapperColaborador.class, Colaborador.class, "colaboradores.xml");
             colaboradores.add(colaborador);
             XMLManager.writeXML(WrapperColaborador.class, colaboradores, "colaboradores.xml");

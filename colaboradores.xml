@@ -5,17 +5,20 @@
         <correoElectronico>manugz@gmail.com</correoElectronico>
         <nombre>Manuel Gómez</nombre>
         <usuario>manuel</usuario>
+        <puntos>0</puntos>
     </colaborador>
     <colaborador>
         <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
         <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
         <nombre>Miguel Ángel Quevedo</nombre>
         <usuario>quevedo98</usuario>
+        <puntos>50</puntos>
     </colaborador>
     <colaborador>
         <contrasenaHash>4bcf064c46415591a3f971621b5e1f0d636e968dffb96e8e430dd235674c98e7</contrasenaHash>
         <correoElectronico>antonio1973@gmail.com</correoElectronico>
         <nombre>Antonio Jiménez </nombre>
         <usuario>antonio73</usuario>
+        <puntos>0</puntos>
     </colaborador>
 </colaboradores>

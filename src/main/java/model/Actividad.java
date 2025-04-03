@@ -75,6 +75,7 @@ public class Actividad {
         this.voluntariosAsignados = voluntariosAsignados != null ? voluntariosAsignados : new ArrayList<>();
         this.creador = creador;
         this.puntos = puntos;
+
     }
 
     public String getNombre() {
@@ -123,6 +124,7 @@ public class Actividad {
 
     public void setVoluntariosAsignados(List<Colaborador> voluntariosAsignados) {
         this.voluntariosAsignados = voluntariosAsignados;
+
     }
 
     public Creador getCreador() {
@@ -148,4 +150,5 @@ public class Actividad {
         COMPLETADA,
         CANCELADA
     }
+
 }

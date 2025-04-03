@@ -173,9 +173,16 @@ public class IniciativaController {
                         if (actividad.getVoluntariosAsignados() == null) {
                             actividad.setVoluntariosAsignados(new ArrayList<>());
                         }
-                        actividad.getVoluntariosAsignados().add(voluntario);
-                        actualizarPuntosColaborador(voluntario, actividad.getPuntos());
-                        guardarIniciativas(iniciativas);
+                        // Verificar si el voluntario ya está asignado
+                        boolean yaAsignado = actividad.getVoluntariosAsignados().stream()
+                                .anyMatch(v -> v.getUsuario().equals(voluntario.getUsuario()));
+                        if (!yaAsignado) {
+                            actividad.getVoluntariosAsignados().add(voluntario);
+                            actualizarPuntosColaborador(voluntario, actividad.getPuntos());
+                            guardarIniciativas(iniciativas);
+                        } else {
+                            System.err.println("El voluntario ya está asignado a esta actividad.");
+                        }
                         return;
                     }
                 }
@@ -199,9 +206,16 @@ public class IniciativaController {
                         if (actividad.getVoluntariosAsignados() == null) {
                             actividad.setVoluntariosAsignados(new ArrayList<>());
                         }
-                        actividad.getVoluntariosAsignados().add(colaborador);
-                        actualizarPuntosColaborador(colaborador, actividad.getPuntos());
-                        guardarIniciativas(iniciativas);
+                        // Verificar si el colaborador ya está inscrito
+                        boolean yaInscrito = actividad.getVoluntariosAsignados().stream()
+                                .anyMatch(v -> v.getUsuario().equals(colaborador.getUsuario()));
+                        if (!yaInscrito) {
+                            actividad.getVoluntariosAsignados().add(colaborador);
+                            actualizarPuntosColaborador(colaborador, actividad.getPuntos());
+                            guardarIniciativas(iniciativas);
+                        } else {
+                            System.err.println("El colaborador ya está inscrito en esta actividad.");
+                        }
                         return;
                     }
                 }
@@ -245,3 +259,4 @@ public class IniciativaController {
         XMLManager.writeXML(WrapperColaborador.class, colaboradores, "colaboradores.xml");
     }
 }
+

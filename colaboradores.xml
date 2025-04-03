@@ -5,20 +5,55 @@
         <correoElectronico>manugz@gmail.com</correoElectronico>
         <nombre>Manuel Gómez</nombre>
         <usuario>manuel</usuario>
-        <puntos>0</puntos>
+        <puntos>150</puntos>
     </colaborador>
     <colaborador>
         <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
         <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
         <nombre>Miguel Ángel Quevedo</nombre>
         <usuario>quevedo98</usuario>
-        <puntos>50</puntos>
+        <puntos>150</puntos>
     </colaborador>
     <colaborador>
         <contrasenaHash>4bcf064c46415591a3f971621b5e1f0d636e968dffb96e8e430dd235674c98e7</contrasenaHash>
         <correoElectronico>antonio1973@gmail.com</correoElectronico>
-        <nombre>Antonio Jiménez </nombre>
+        <nombre>Antonio Jiménez</nombre>
         <usuario>antonio73</usuario>
         <puntos>0</puntos>
+    </colaborador>
+    <colaborador>
+        <contrasenaHash>e99a18c428cb38d5f260853678922e03</contrasenaHash>
+        <correoElectronico>maria@example.com</correoElectronico>
+        <nombre>Maria López</nombre>
+        <usuario>maria123</usuario>
+        <puntos>40</puntos>
+    </colaborador>
+    <colaborador>
+        <contrasenaHash>ab56b4d92b40713acc5af89985d4b786</contrasenaHash>
+        <correoElectronico>pedro@example.com</correoElectronico>
+        <nombre>Pedro Sánchez</nombre>
+        <usuario>pedro456</usuario>
+        <puntos>30</puntos>
+    </colaborador>
+    <colaborador>
+        <contrasenaHash>5f4dcc3b5aa765d61d8327deb882cf99</contrasenaHash>
+        <correoElectronico>lucia@example.com</correoElectronico>
+        <nombre>Lucia Martínez</nombre>
+        <usuario>lucia789</usuario>
+        <puntos>40</puntos>
+    </colaborador>
+    <colaborador>
+        <contrasenaHash>098f6bcd4621d373cade4e832627b4f6</contrasenaHash>
+        <correoElectronico>jose@example.com</correoElectronico>
+        <nombre>Jose Fernández</nombre>
+        <usuario>jose101</usuario>
+        <puntos>10</puntos>
+    </colaborador>
+    <colaborador>
+        <contrasenaHash>ad0234829205b9033196ba818f7a872b</contrasenaHash>
+        <correoElectronico>ana@example.com</correoElectronico>
+        <nombre>Ana García</nombre>
+        <usuario>ana202</usuario>
+        <puntos>25</puntos>
     </colaborador>
 </colaboradores>

@@ -28,4 +28,18 @@
         <usuario>admin</usuario>
         <nombreONG>Cáritas</nombreONG>
     </creador>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="creador">
+        <contrasenaHash>5f4dcc3b5aa765d61d8327deb882cf99</contrasenaHash>
+        <correoElectronico>lucia@ong.es</correoElectronico>
+        <nombre>Lucia Martínez</nombre>
+        <usuario>lucia789</usuario>
+        <nombreONG>ONG Verde</nombreONG>
+    </item>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="creador">
+        <contrasenaHash>098f6bcd4621d373cade4e832627b4f6</contrasenaHash>
+        <correoElectronico>jose@ong.es</correoElectronico>
+        <nombre>Jose Fernández</nombre>
+        <usuario>jose101</usuario>
+        <nombreONG>ONG Azul</nombreONG>
+    </item>
 </creadores>

@@ -2,29 +2,19 @@ package model;
 
 import DataAccess.XMLManager;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import java.io.Serializable;
-import java.util.ArrayList;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
 
-@XmlRootElement(name = "item")
-@XmlAccessorType(XmlAccessType.FIELD)
-public class Usuario implements Serializable {
-    @XmlElement
+public class Usuario {
     private String nombre;
-    @XmlElement
     private String usuario;
-    @XmlElement
     private String contrasenaHash;
-    @XmlElement
     private String correoElectronico;
 
-    // Lista estática para almacenar los usuarios
-    private static ArrayList<Usuario> usuarios = new ArrayList<>();
+    // Constructores, getters y setters...
 
     public Usuario() {
     }
@@ -32,11 +22,9 @@ public class Usuario implements Serializable {
     public Usuario(String nombre, String usuario, String contrasenaHash, String correoElectronico) {
         this.nombre = nombre;
         this.usuario = usuario;
-        this.contrasenaHash = hashContrasena(contrasenaHash);
+        this.contrasenaHash = contrasenaHash;
         this.correoElectronico = correoElectronico;
     }
-
-    // Getters y setters...
 
     public String getNombre() {
         return nombre;
@@ -59,7 +47,7 @@ public class Usuario implements Serializable {
     }
 
     public void setContrasenaHash(String contrasenaHash) {
-        this.contrasenaHash = hashContrasena(contrasenaHash);
+        this.contrasenaHash = contrasenaHash;
     }
 
     public String getCorreoElectronico() {
@@ -70,26 +58,46 @@ public class Usuario implements Serializable {
         this.correoElectronico = correoElectronico;
     }
 
-    // El campo estático no debe ser serializado
-    public static ArrayList<Usuario> getUsuarios() {
-        return usuarios;
-    }
-
-    public static void setUsuarios(ArrayList<Usuario> usuarios) {
-        Usuario.usuarios = usuarios;
-    }
-
-    // Validación de correo electrónico y hash de contraseñas (sin cambios)
-
+    /**
+     * Verifica si la contraseña proporcionada coincide con el hash almacenado.
+     * @param contrasena Contraseña a verificar.
+     * @return true si la contraseña coincide, false en caso contrario.
+     */
     public boolean verificarContrasena(String contrasena) {
         return this.contrasenaHash.equals(hashContrasena(contrasena));
     }
 
+    /**
+     * Genera el hash de una contraseña utilizando SHA-256.
+     * @param contrasena Contraseña a hashear.
+     * @return Hash de la contraseña.
+     */
     public static String hashContrasena(String contrasena) {
-        // Algoritmo de hash
-        return Integer.toHexString(contrasena.hashCode());
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] encodedhash = digest.digest(contrasena.getBytes(StandardCharsets.UTF_8));
+            StringBuilder hexString = new StringBuilder(2 * encodedhash.length);
+            for (byte b : encodedhash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
-    private Usuario autenticarUsuario(String usuario, String contrasena) {
+
+    /**
+     * Autentica un usuario con su nombre de usuario y contraseña.
+     * @param usuario Nombre de usuario.
+     * @param contrasena Contraseña del usuario.
+     * @return Usuario autenticado o null si la autenticación falla.
+     */
+    public static Usuario autenticarUsuario(String usuario, String contrasena) {
+        String contrasenaHash = hashContrasena(contrasena);
         List<Creador> creadores = XMLManager.readXML(WrapperCreador.class, Creador.class, "creadores.xml");
         List<Colaborador> colaboradores = XMLManager.readXML(WrapperColaborador.class, Colaborador.class, "colaboradores.xml");
 
@@ -107,8 +115,19 @@ public class Usuario implements Serializable {
 
         return null;
     }
-    public static boolean validarCorreoElectronico(String correo) {
-        String regex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-        return Pattern.matches(regex, correo);
+
+    /**
+     * Obtiene la lista de iniciativas creadas por el usuario.
+     * @return Array de iniciativas creadas por el usuario.
+     */
+    public Iniciativa[] getListaIniciativas() {
+        List<Iniciativa> todasIniciativas = XMLManager.readXML(WrapperIniciativa.class, Iniciativa.class, "iniciativas.xml");
+        List<Iniciativa> iniciativasUsuario = new ArrayList<>();
+        for (Iniciativa iniciativa : todasIniciativas) {
+            if (iniciativa.getCreador().getUsuario().equals(this.usuario)) {
+                iniciativasUsuario.add(iniciativa);
+            }
+        }
+        return iniciativasUsuario.toArray(new Iniciativa[0]);
     }
 }

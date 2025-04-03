@@ -7,6 +7,10 @@ import java.util.List;
 @XmlRootElement(name = "iniciativas")
 public class WrapperIniciativa extends Wrapper<Iniciativa> {
 
+    public WrapperIniciativa() {
+        super();
+    }
+
     @XmlElement(name = "iniciativa")
     public List<Iniciativa> getItems() {
         return super.getItems();

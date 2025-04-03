@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <colaboradores>
     <colaborador>
-        <nombre>vv</nombre>
-        <usuario>vv</usuario>
-        <contrasenaHash>18752</contrasenaHash>
-        <correoElectronico>vv@gm.es</correoElectronico>
+        <contrasenaHash>594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06</contrasenaHash>
+        <correoElectronico>manugz@gmail.com</correoElectronico>
+        <nombre>Manuel Gómez</nombre>
+        <usuario>manuel</usuario>
+    </colaborador>
+    <colaborador>
+        <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+        <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+        <nombre>Miguel Ángel Quevedo</nombre>
+        <usuario>quevedo98</usuario>
+    </colaborador>
+    <colaborador>
+        <contrasenaHash>4bcf064c46415591a3f971621b5e1f0d636e968dffb96e8e430dd235674c98e7</contrasenaHash>
+        <correoElectronico>antonio1973@gmail.com</correoElectronico>
+        <nombre>Antonio Jiménez </nombre>
+        <usuario>antonio73</usuario>
     </colaborador>
 </colaboradores>

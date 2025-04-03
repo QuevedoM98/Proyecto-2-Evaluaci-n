@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <creadores>
-    <creador>
-        <nombre>pp</nombre>
-        <usuario>pp</usuario>
-        <contrasenaHash>e00</contrasenaHash>
-        <correoElectronico>pp@gm.es</correoElectronico>
-        <nombreONG>ss</nombreONG>
-    </creador>
-    <creador>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="creador">
+        <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+        <correoElectronico>a@gm.es</correoElectronico>
         <nombre>a</nombre>
         <usuario>a</usuario>
-        <contrasenaHash>61</contrasenaHash>
+        <nombreONG>s</nombreONG>
+    </item>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="creador">
+        <contrasenaHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</contrasenaHash>
+        <correoElectronico>admin@caritas.es</correoElectronico>
+        <nombre>admin</nombre>
+        <usuario>admin</usuario>
+        <nombreONG>Cáritas</nombreONG>
+    </item>
+    <creador>
+        <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
         <correoElectronico>a@gm.es</correoElectronico>
-        <nombreONG>a</nombreONG>
+        <nombre>a</nombre>
+        <usuario>a</usuario>
+        <nombreONG>s</nombreONG>
+    </creador>
+    <creador>
+        <contrasenaHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</contrasenaHash>
+        <correoElectronico>admin@caritas.es</correoElectronico>
+        <nombre>admin</nombre>
+        <usuario>admin</usuario>
+        <nombreONG>Cáritas</nombreONG>
     </creador>
 </creadores>

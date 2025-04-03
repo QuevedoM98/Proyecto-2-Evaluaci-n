@@ -1,25 +1,231 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <iniciativas>
-    <iniciativa>
-        <nombreIniciativa>Iniciativa 1</nombreIniciativa>
-        <descripcion>Descripción de la Iniciativa 1</descripcion>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="iniciativa">
+        <nombreIniciativa>Limpieza de Playas</nombreIniciativa>
+        <descripcion>Recogida de latas, plastico, basuras, etc.</descripcion>
         <creador>
-            <nombre>Juan Pérez</nombre>
-            <usuario>juan123</usuario>
-            <contrasenaHash>hash123</contrasenaHash>
-            <correoElectronico>juanperez@mail.com</correoElectronico>
-            <nombreONG>Fundación X</nombreONG>
+            <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+            <correoElectronico>a@gm.es</correoElectronico>
+            <nombre>a</nombre>
+            <usuario>a</usuario>
+            <nombreONG>s</nombreONG>
         </creador>
-    </iniciativa>
+        <actividades>
+            <nombre>Torremolinos</nombre>
+            <descripcion>Limpieza de playa, recogida de basura en las rocas</descripcion>
+            <fechaInicio>2025-03-03T00:00:00+01:00</fechaInicio>
+            <fechaFin>2025-04-04T00:00:00+02:00</fechaFin>
+            <estado>PENDIENTE</estado>
+            <voluntariosAsignados>
+                <voluntario>
+                    <contrasenaHash>hash123</contrasenaHash>
+                    <correoElectronico>juan@example.com</correoElectronico>
+                    <nombre>Juan</nombre>
+                    <usuario>juan123</usuario>
+                    <puntos>0</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06</contrasenaHash>
+                    <correoElectronico>manugz@gmail.com</correoElectronico>
+                    <nombre>Manuel Gómez</nombre>
+                    <usuario>manuel</usuario>
+                    <puntos>0</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>10</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>0</puntos>
+                </voluntario>
+            </voluntariosAsignados>
+            <creador>
+                <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+                <correoElectronico>a@gm.es</correoElectronico>
+                <nombre>a</nombre>
+                <usuario>a</usuario>
+                <nombreONG>s</nombreONG>
+            </creador>
+            <puntos>0</puntos>
+        </actividades>
+        <actividades>
+            <nombre>Playa de la Malagueta</nombre>
+            <descripcion>Limpieza de orilla con maquinaria pesada</descripcion>
+            <fechaInicio>2025-01-01T00:00:00+01:00</fechaInicio>
+            <fechaFin>2025-12-24T00:00:00+01:00</fechaFin>
+            <estado>EN_PROGRESO</estado>
+            <voluntariosAsignados>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>10</puntos>
+                </voluntario>
+            </voluntariosAsignados>
+            <creador>
+                <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+                <correoElectronico>a@gm.es</correoElectronico>
+                <nombre>a</nombre>
+                <usuario>a</usuario>
+                <nombreONG>s</nombreONG>
+            </creador>
+            <puntos>0</puntos>
+        </actividades>
+        <actividades>
+            <nombre>Benalmádena</nombre>
+            <descripcion>Limpieza de la orilla con rastrillos</descripcion>
+            <fechaInicio>2025-05-05T00:00:00+02:00</fechaInicio>
+            <fechaFin>2025-06-05T00:00:00+02:00</fechaFin>
+            <estado>PENDIENTE</estado>
+            <voluntariosAsignados>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06</contrasenaHash>
+                    <correoElectronico>manugz@gmail.com</correoElectronico>
+                    <nombre>Manuel Gómez</nombre>
+                    <usuario>manuel</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+            </voluntariosAsignados>
+            <creador>
+                <contrasenaHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</contrasenaHash>
+                <correoElectronico>admin@caritas.es</correoElectronico>
+                <nombre>admin</nombre>
+                <usuario>admin</usuario>
+                <nombreONG>Cáritas</nombreONG>
+            </creador>
+            <puntos>50</puntos>
+        </actividades>
+        <fechaInicio>2025-03-03T00:00:00+01:00</fechaInicio>
+        <fechaFin>2025-04-04T00:00:00+02:00</fechaFin>
+        <estado>EN_PROGRESO</estado>
+    </item>
     <iniciativa>
-        <nombreIniciativa>Iniciativa 2</nombreIniciativa>
-        <descripcion>Descripción de la Iniciativa 2</descripcion>
+        <nombreIniciativa>Limpieza de Playas</nombreIniciativa>
+        <descripcion>Recogida de latas, plastico, basuras, etc.</descripcion>
         <creador>
-            <nombre>Ana García</nombre>
-            <usuario>ana456</usuario>
-            <contrasenaHash>hash456</contrasenaHash>
-            <correoElectronico>anagarcia@mail.com</correoElectronico>
-            <nombreONG>Fundación Y</nombreONG>
+            <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+            <correoElectronico>a@gm.es</correoElectronico>
+            <nombre>a</nombre>
+            <usuario>a</usuario>
+            <nombreONG>s</nombreONG>
         </creador>
+        <actividades>
+            <nombre>Torremolinos</nombre>
+            <descripcion>Limpieza de playa, recogida de basura en las rocas</descripcion>
+            <fechaInicio>2025-03-03T00:00:00+01:00</fechaInicio>
+            <fechaFin>2025-04-04T00:00:00+02:00</fechaFin>
+            <estado>PENDIENTE</estado>
+            <voluntariosAsignados>
+                <voluntario>
+                    <contrasenaHash>hash123</contrasenaHash>
+                    <correoElectronico>juan@example.com</correoElectronico>
+                    <nombre>Juan</nombre>
+                    <usuario>juan123</usuario>
+                    <puntos>0</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06</contrasenaHash>
+                    <correoElectronico>manugz@gmail.com</correoElectronico>
+                    <nombre>Manuel Gómez</nombre>
+                    <usuario>manuel</usuario>
+                    <puntos>0</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>10</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>0</puntos>
+                </voluntario>
+            </voluntariosAsignados>
+            <creador>
+                <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+                <correoElectronico>a@gm.es</correoElectronico>
+                <nombre>a</nombre>
+                <usuario>a</usuario>
+                <nombreONG>s</nombreONG>
+            </creador>
+            <puntos>0</puntos>
+        </actividades>
+        <actividades>
+            <nombre>Playa de la Malagueta</nombre>
+            <descripcion>Limpieza de orilla con maquinaria pesada</descripcion>
+            <fechaInicio>2025-01-01T00:00:00+01:00</fechaInicio>
+            <fechaFin>2025-12-24T00:00:00+01:00</fechaFin>
+            <estado>EN_PROGRESO</estado>
+            <voluntariosAsignados>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>10</puntos>
+                </voluntario>
+            </voluntariosAsignados>
+            <creador>
+                <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+                <correoElectronico>a@gm.es</correoElectronico>
+                <nombre>a</nombre>
+                <usuario>a</usuario>
+                <nombreONG>s</nombreONG>
+            </creador>
+            <puntos>0</puntos>
+        </actividades>
+        <actividades>
+            <nombre>Benalmádena</nombre>
+            <descripcion>Limpieza de la orilla con rastrillos</descripcion>
+            <fechaInicio>2025-05-05T00:00:00+02:00</fechaInicio>
+            <fechaFin>2025-06-05T00:00:00+02:00</fechaFin>
+            <estado>PENDIENTE</estado>
+            <voluntariosAsignados>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06</contrasenaHash>
+                    <correoElectronico>manugz@gmail.com</correoElectronico>
+                    <nombre>Manuel Gómez</nombre>
+                    <usuario>manuel</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+            </voluntariosAsignados>
+            <creador>
+                <contrasenaHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</contrasenaHash>
+                <correoElectronico>admin@caritas.es</correoElectronico>
+                <nombre>admin</nombre>
+                <usuario>admin</usuario>
+                <nombreONG>Cáritas</nombreONG>
+            </creador>
+            <puntos>50</puntos>
+        </actividades>
+        <fechaInicio>2025-03-03T00:00:00+01:00</fechaInicio>
+        <fechaFin>2025-04-04T00:00:00+02:00</fechaFin>
+        <estado>EN_PROGRESO</estado>
     </iniciativa>
 </iniciativas>

@@ -56,4 +56,11 @@
         <usuario>ana202</usuario>
         <puntos>25</puntos>
     </colaborador>
+    <colaborador>
+        <contrasenaHash>0a8b7fce627ce6fd5e36ea762e013fcfbcf5ce3abd442796d4fecfd89e4dfd66</contrasenaHash>
+        <correoElectronico>juan@gmail.com</correoElectronico>
+        <nombre>Juan</nombre>
+        <usuario>juan1998</usuario>
+        <puntos>0</puntos>
+    </colaborador>
 </colaboradores>

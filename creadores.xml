@@ -35,6 +35,13 @@
         <usuario>jesuspala</usuario>
         <nombreONG>Manos Unidas</nombreONG>
     </item>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="creador">
+        <contrasenaHash>78c1383af877a464c0fbc9021d3b95a720b4bf2a1e626ff29a6fcdc918c800ea</contrasenaHash>
+        <correoElectronico>dylanabad@gmail.com</correoElectronico>
+        <nombre>Dylan</nombre>
+        <usuario>dylan2005</usuario>
+        <nombreONG>DylanORG</nombreONG>
+    </item>
     <creador>
         <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
         <correoElectronico>a@gm.es</correoElectronico>
@@ -69,5 +76,12 @@
         <nombre>Jesus Palacios</nombre>
         <usuario>jesuspala</usuario>
         <nombreONG>Manos Unidas</nombreONG>
+    </creador>
+    <creador>
+        <contrasenaHash>78c1383af877a464c0fbc9021d3b95a720b4bf2a1e626ff29a6fcdc918c800ea</contrasenaHash>
+        <correoElectronico>dylanabad@gmail.com</correoElectronico>
+        <nombre>Dylan</nombre>
+        <usuario>dylan2005</usuario>
+        <nombreONG>DylanORG</nombreONG>
     </creador>
 </creadores>

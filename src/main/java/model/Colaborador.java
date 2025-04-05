@@ -1,42 +1,60 @@
-
-
-
 package model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlRootElement(name = "colaborador")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Colaborador extends Usuario {
+    @XmlElement
+    private List<Actividad> listaActividades;
+    @XmlElement
+    private int puntos; // Asegurar que el atributo puntos se serialice
 
-    private int puntos;
-    private List<Actividad> actividades;
+    public Colaborador() {
+        this.listaActividades = new ArrayList<>();
+        this.puntos = 0; // Inicializar puntos
+    }
 
-    public Colaborador(String nombre, String usuario, String contrasena, String correoElectronico) {
-        super(nombre, usuario, contrasena, correoElectronico);
-        this.puntos = 0;
-        this.actividades = new ArrayList<>();
+    /**
+     * Constructor de la clase Colaborador.
+     * @param nombre Nombre del colaborador.
+     * @param usuario Nombre de usuario del colaborador.
+     * @param contrasenaHash Hash de la contraseña del colaborador.
+     * @param correoElectronico Correo electrónico del colaborador.
+     */
+    public Colaborador(String nombre, String usuario, String contrasenaHash, String correoElectronico) {
+        super(nombre, usuario, contrasenaHash, correoElectronico);
+        this.listaActividades = new ArrayList<>();
+        this.puntos = 0; // Inicializar puntos
+    }
+
+    public List<Actividad> getListaActividades() {
+        return listaActividades;
+    }
+
+    public void setListaActividades(List<Actividad> listaActividades) {
+        this.listaActividades = listaActividades;
     }
 
     public int getPuntos() {
         return puntos;
     }
 
-    public void incrementarPuntos(int puntos) {
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
+    /**
+     * Agrega puntos al colaborador.
+     * @param puntos Puntos a agregar.
+     */
+    public void agregarPuntos(int puntos) {
         this.puntos += puntos;
     }
 
-    public List<Actividad> getActividades() {
-        return actividades;
-    }
-
-    public void agregarActividad(Actividad actividad) {
-        actividades.add(actividad);
-    }
-
-    public void eliminarActividad(Actividad actividad) {
-        actividades.remove(actividad);
-    }
 }
-
-
-

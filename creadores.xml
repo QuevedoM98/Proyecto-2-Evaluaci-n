@@ -42,6 +42,27 @@
         <usuario>dylan2005</usuario>
         <nombreONG>DylanORG</nombreONG>
     </item>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="creador">
+        <contrasenaHash>ed08c290d7e22f7bb324b15cbadce35b0b348564fd2d5f95752388d86d71bcca</contrasenaHash>
+        <correoElectronico>juan@gm.es</correoElectronico>
+        <nombre>juan</nombre>
+        <usuario>juan</usuario>
+        <nombreONG>Cáritas</nombreONG>
+    </item>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="creador">
+        <contrasenaHash>e27622e8321da74e6eafb1cee8e7804200cb536ef606173c0376d5f8c470ceaf</contrasenaHash>
+        <correoElectronico>ramon@gmail.com</correoElectronico>
+        <nombre>ramon</nombre>
+        <usuario>ramon</usuario>
+        <nombreONG>Manos Unidas</nombreONG>
+    </item>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="creador">
+        <contrasenaHash>a9010fd21a93c687b3c4c506313993b5a2ade87b719d09792b120a27b852f749</contrasenaHash>
+        <correoElectronico>alejandro@gmail.com</correoElectronico>
+        <nombre>Alejandro</nombre>
+        <usuario>alejandro</usuario>
+        <nombreONG>Manos Unidas</nombreONG>
+    </item>
     <creador>
         <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
         <correoElectronico>a@gm.es</correoElectronico>
@@ -83,5 +104,26 @@
         <nombre>Dylan</nombre>
         <usuario>dylan2005</usuario>
         <nombreONG>DylanORG</nombreONG>
+    </creador>
+    <creador>
+        <contrasenaHash>ed08c290d7e22f7bb324b15cbadce35b0b348564fd2d5f95752388d86d71bcca</contrasenaHash>
+        <correoElectronico>juan@gm.es</correoElectronico>
+        <nombre>juan</nombre>
+        <usuario>juan</usuario>
+        <nombreONG>Cáritas</nombreONG>
+    </creador>
+    <creador>
+        <contrasenaHash>e27622e8321da74e6eafb1cee8e7804200cb536ef606173c0376d5f8c470ceaf</contrasenaHash>
+        <correoElectronico>ramon@gmail.com</correoElectronico>
+        <nombre>ramon</nombre>
+        <usuario>ramon</usuario>
+        <nombreONG>Manos Unidas</nombreONG>
+    </creador>
+    <creador>
+        <contrasenaHash>a9010fd21a93c687b3c4c506313993b5a2ade87b719d09792b120a27b852f749</contrasenaHash>
+        <correoElectronico>alejandro@gmail.com</correoElectronico>
+        <nombre>Alejandro</nombre>
+        <usuario>alejandro</usuario>
+        <nombreONG>Manos Unidas</nombreONG>
     </creador>
 </creadores>

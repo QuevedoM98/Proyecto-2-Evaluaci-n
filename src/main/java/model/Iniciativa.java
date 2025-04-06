@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -45,6 +46,7 @@ public class Iniciativa {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.estado = estado;
+        this.actividades = new ArrayList<>();
     }
 
     public String getNombreIniciativa() {
@@ -72,6 +74,9 @@ public class Iniciativa {
     }
 
     public List<Actividad> getActividades() {
+        if (actividades == null) {
+            actividades = new ArrayList<>();
+        }
         return actividades;
     }
 
@@ -84,7 +89,7 @@ public class Iniciativa {
      * @param actividad Actividad a agregar.
      */
     public void agregarActividad(Actividad actividad) {
-        this.actividades.add(actividad);
+        getActividades().add(actividad);
     }
 
     /**
@@ -92,7 +97,7 @@ public class Iniciativa {
      * @param nombre Nombre de la actividad a eliminar.
      */
     public void eliminarActividad(String nombre) {
-        this.actividades.removeIf(actividad -> actividad.getNombre().equalsIgnoreCase(nombre));
+        getActividades().removeIf(actividad -> actividad.getNombre().equalsIgnoreCase(nombre));
     }
 
     public Date getFechaInicio() {

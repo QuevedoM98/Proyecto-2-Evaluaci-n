@@ -63,4 +63,11 @@
         <usuario>juan1998</usuario>
         <puntos>0</puntos>
     </colaborador>
+    <colaborador>
+        <contrasenaHash>ed08c290d7e22f7bb324b15cbadce35b0b348564fd2d5f95752388d86d71bcca</contrasenaHash>
+        <correoElectronico>juan@gmail.com</correoElectronico>
+        <nombre>juan</nombre>
+        <usuario>juan</usuario>
+        <puntos>0</puntos>
+    </colaborador>
 </colaboradores>

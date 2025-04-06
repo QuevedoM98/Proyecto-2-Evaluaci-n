@@ -63,69 +63,6 @@
             <puntos>50</puntos>
         </actividades>
     </item>
-    <iniciativa>
-        <nombreIniciativa>Limpieza de Playas</nombreIniciativa>
-        <descripcion>Recogida de latas, plastico, basuras, etc.</descripcion>
-        <creador>
-            <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
-            <correoElectronico>a@gm.es</correoElectronico>
-            <nombre>a</nombre>
-            <usuario>a</usuario>
-            <nombreONG>s</nombreONG>
-        </creador>
-        <actividades>
-            <nombre>Torremolinos</nombre>
-            <descripcion>Limpieza de playa, recogida de basura en las rocas</descripcion>
-            <fechaInicio>2025-03-03T00:00:00+01:00</fechaInicio>
-            <fechaFin>2025-04-04T00:00:00+02:00</fechaFin>
-            <estado>PENDIENTE</estado>
-            <voluntariosAsignados>
-                <voluntario>
-                    <contrasenaHash>hash123</contrasenaHash>
-                    <correoElectronico>juan@example.com</correoElectronico>
-                    <nombre>Juan</nombre>
-                    <usuario>juan123</usuario>
-                    <puntos>50</puntos>
-                </voluntario>
-                <voluntario>
-                    <contrasenaHash>594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06</contrasenaHash>
-                    <correoElectronico>manugz@gmail.com</correoElectronico>
-                    <nombre>Manuel Gómez</nombre>
-                    <usuario>manuel</usuario>
-                    <puntos>50</puntos>
-                </voluntario>
-                <voluntario>
-                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
-                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
-                    <nombre>Miguel Ángel Quevedo</nombre>
-                    <usuario>quevedo98</usuario>
-                    <puntos>50</puntos>
-                </voluntario>
-                <voluntario>
-                    <contrasenaHash>4bcf064c46415591a3f971621b5e1f0d636e968dffb96e8e430dd235674c98e7</contrasenaHash>
-                    <correoElectronico>antonio1973@gmail.com</correoElectronico>
-                    <nombre>Antonio Jiménez</nombre>
-                    <usuario>antonio73</usuario>
-                    <puntos>0</puntos>
-                </voluntario>
-                <voluntario>
-                    <contrasenaHash>e99a18c428cb38d5f260853678922e03</contrasenaHash>
-                    <correoElectronico>maria@example.com</correoElectronico>
-                    <nombre>Maria López</nombre>
-                    <usuario>maria123</usuario>
-                    <puntos>20</puntos>
-                </voluntario>
-            </voluntariosAsignados>
-            <creador>
-                <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
-                <correoElectronico>a@gm.es</correoElectronico>
-                <nombre>a</nombre>
-                <usuario>a</usuario>
-                <nombreONG>s</nombreONG>
-            </creador>
-            <puntos>50</puntos>
-        </actividades>
-    </iniciativa>
     <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="iniciativa">
         <nombreIniciativa>Reforestación en Sierra Nevada</nombreIniciativa>
         <descripcion>Plantación de árboles autóctonos en la zona afectada por incendios.</descripcion>
@@ -252,7 +189,6 @@
             <puntos>80</puntos>
         </actividades>
     </item>
-    <!-- Nueva iniciativa 1 -->
     <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="iniciativa">
         <nombreIniciativa>Construcción de Refugios</nombreIniciativa>
         <descripcion>Construcción de refugios para personas sin hogar.</descripcion>
@@ -268,7 +204,7 @@
             <descripcion>Construcción de refugios en la ciudad de Madrid.</descripcion>
             <fechaInicio>2025-07-01T00:00:00+02:00</fechaInicio>
             <fechaFin>2025-07-31T00:00:00+02:00</fechaFin>
-            <estado>EN_PROGRESO</estado> <!-- Estado aleatorio -->
+            <estado>EN_PROGRESO</estado>
             <voluntariosAsignados/>
             <creador>
                 <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
@@ -280,7 +216,6 @@
             <puntos>150</puntos>
         </actividades>
     </item>
-    <!-- Nueva iniciativa 2 -->
     <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="iniciativa">
         <nombreIniciativa>Educación para Todos</nombreIniciativa>
         <descripcion>Programas educativos para niños en comunidades rurales.</descripcion>
@@ -296,7 +231,7 @@
             <descripcion>Clases de refuerzo escolar en comunidades rurales.</descripcion>
             <fechaInicio>2025-08-01T00:00:00+02:00</fechaInicio>
             <fechaFin>2025-08-31T00:00:00+02:00</fechaFin>
-            <estado>COMPLETADA</estado> <!-- Estado aleatorio -->
+            <estado>COMPLETADA</estado>
             <voluntariosAsignados/>
             <creador>
                 <contrasenaHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</contrasenaHash>
@@ -308,7 +243,6 @@
             <puntos>200</puntos>
         </actividades>
     </item>
-    <!-- Nueva iniciativa 3 -->
     <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="iniciativa">
         <nombreIniciativa>Reciclaje Comunitario</nombreIniciativa>
         <descripcion>Iniciativa para promover el reciclaje en comunidades urbanas.</descripcion>
@@ -324,7 +258,7 @@
             <descripcion>Campaña de reciclaje en barrios de Barcelona.</descripcion>
             <fechaInicio>2025-09-01T00:00:00+02:00</fechaInicio>
             <fechaFin>2025-09-30T00:00:00+02:00</fechaFin>
-            <estado>CANCELADA</estado> <!-- Estado aleatorio -->
+            <estado>CANCELADA</estado>
             <voluntariosAsignados/>
             <creador>
                 <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
@@ -336,4 +270,302 @@
             <puntos>120</puntos>
         </actividades>
     </item>
+    <item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="iniciativa">
+        <nombreIniciativa>Limpieza de Playas de Barcelona</nombreIniciativa>
+        <descripcion>Recogida de basura y desechos en barcelona</descripcion>
+        <creador>
+            <contrasenaHash>e27622e8321da74e6eafb1cee8e7804200cb536ef606173c0376d5f8c470ceaf</contrasenaHash>
+            <correoElectronico>ramon@gmail.com</correoElectronico>
+            <nombre>ramon</nombre>
+            <usuario>ramon</usuario>
+            <nombreONG>Manos Unidas</nombreONG>
+        </creador>
+        <fechaInicio>2024-04-22T00:00:00+02:00</fechaInicio>
+        <fechaFin>2024-06-22T00:00:00+02:00</fechaFin>
+        <estado>EN_PROGRESO</estado>
+    </item>
+    <iniciativa>
+        <nombreIniciativa>Limpieza de Playas</nombreIniciativa>
+        <descripcion>Recogida de latas, plastico, basuras, etc.</descripcion>
+        <creador>
+            <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+            <correoElectronico>a@gm.es</correoElectronico>
+            <nombre>a</nombre>
+            <usuario>a</usuario>
+            <nombreONG>s</nombreONG>
+        </creador>
+        <actividades>
+            <nombre>Torremolinos</nombre>
+            <descripcion>Limpieza de playa, recogida de basura en las rocas</descripcion>
+            <fechaInicio>2025-03-03T00:00:00+01:00</fechaInicio>
+            <fechaFin>2025-04-04T00:00:00+02:00</fechaFin>
+            <estado>PENDIENTE</estado>
+            <voluntariosAsignados>
+                <voluntario>
+                    <contrasenaHash>hash123</contrasenaHash>
+                    <correoElectronico>juan@example.com</correoElectronico>
+                    <nombre>Juan</nombre>
+                    <usuario>juan123</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06</contrasenaHash>
+                    <correoElectronico>manugz@gmail.com</correoElectronico>
+                    <nombre>Manuel Gómez</nombre>
+                    <usuario>manuel</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>4bcf064c46415591a3f971621b5e1f0d636e968dffb96e8e430dd235674c98e7</contrasenaHash>
+                    <correoElectronico>antonio1973@gmail.com</correoElectronico>
+                    <nombre>Antonio Jiménez</nombre>
+                    <usuario>antonio73</usuario>
+                    <puntos>0</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>e99a18c428cb38d5f260853678922e03</contrasenaHash>
+                    <correoElectronico>maria@example.com</correoElectronico>
+                    <nombre>Maria López</nombre>
+                    <usuario>maria123</usuario>
+                    <puntos>20</puntos>
+                </voluntario>
+            </voluntariosAsignados>
+            <creador>
+                <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+                <correoElectronico>a@gm.es</correoElectronico>
+                <nombre>a</nombre>
+                <usuario>a</usuario>
+                <nombreONG>s</nombreONG>
+            </creador>
+            <puntos>50</puntos>
+        </actividades>
+    </iniciativa>
+    <iniciativa>
+        <nombreIniciativa>Reforestación en Sierra Nevada</nombreIniciativa>
+        <descripcion>Plantación de árboles autóctonos en la zona afectada por incendios.</descripcion>
+        <creador>
+            <contrasenaHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</contrasenaHash>
+            <correoElectronico>admin@caritas.es</correoElectronico>
+            <nombre>admin</nombre>
+            <usuario>admin</usuario>
+            <nombreONG>Cáritas</nombreONG>
+        </creador>
+        <actividades>
+            <nombre>Granada</nombre>
+            <descripcion>Plantación de árboles en la zona afectada por incendios.</descripcion>
+            <fechaInicio>2025-05-01T00:00:00+02:00</fechaInicio>
+            <fechaFin>2025-05-15T00:00:00+02:00</fechaFin>
+            <estado>PENDIENTE</estado>
+            <voluntariosAsignados>
+                <voluntario>
+                    <contrasenaHash>hash123</contrasenaHash>
+                    <correoElectronico>juan@example.com</correoElectronico>
+                    <nombre>Juan</nombre>
+                    <usuario>juan123</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06</contrasenaHash>
+                    <correoElectronico>manugz@gmail.com</correoElectronico>
+                    <nombre>Manuel Gómez</nombre>
+                    <usuario>manuel</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>4bcf064c46415591a3f971621b5e1f0d636e968dffb96e8e430dd235674c98e7</contrasenaHash>
+                    <correoElectronico>antonio1973@gmail.com</correoElectronico>
+                    <nombre>Antonio Jiménez</nombre>
+                    <usuario>antonio73</usuario>
+                    <puntos>0</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>e99a18c428cb38d5f260853678922e03</contrasenaHash>
+                    <correoElectronico>maria@example.com</correoElectronico>
+                    <nombre>Maria López</nombre>
+                    <usuario>maria123</usuario>
+                    <puntos>20</puntos>
+                </voluntario>
+            </voluntariosAsignados>
+            <creador>
+                <contrasenaHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</contrasenaHash>
+                <correoElectronico>admin@caritas.es</correoElectronico>
+                <nombre>admin</nombre>
+                <usuario>admin</usuario>
+                <nombreONG>Cáritas</nombreONG>
+            </creador>
+            <puntos>100</puntos>
+        </actividades>
+    </iniciativa>
+    <iniciativa>
+        <nombreIniciativa>Recogida de Alimentos</nombreIniciativa>
+        <descripcion>Recogida de alimentos no perecederos para familias necesitadas.</descripcion>
+        <creador>
+            <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+            <correoElectronico>a@gm.es</correoElectronico>
+            <nombre>a</nombre>
+            <usuario>a</usuario>
+            <nombreONG>s</nombreONG>
+        </creador>
+        <actividades>
+            <nombre>Sevilla</nombre>
+            <descripcion>Recogida de alimentos en supermercados y centros comerciales.</descripcion>
+            <fechaInicio>2025-06-01T00:00:00+02:00</fechaInicio>
+            <fechaFin>2025-06-30T00:00:00+02:00</fechaFin>
+            <estado>PENDIENTE</estado>
+            <voluntariosAsignados>
+                <voluntario>
+                    <contrasenaHash>hash123</contrasenaHash>
+                    <correoElectronico>juan@example.com</correoElectronico>
+                    <nombre>Juan</nombre>
+                    <usuario>juan123</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>594e519ae499312b29433b7dd8a97ff068defcba9755b6d5d00e84c524d67b06</contrasenaHash>
+                    <correoElectronico>manugz@gmail.com</correoElectronico>
+                    <nombre>Manuel Gómez</nombre>
+                    <usuario>manuel</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>095acc488761c16214071e2f0c8dc6b9010f89a5619e356cb628eab0e1fcacc2</contrasenaHash>
+                    <correoElectronico>miguelangelquevedo98@gmail.com</correoElectronico>
+                    <nombre>Miguel Ángel Quevedo</nombre>
+                    <usuario>quevedo98</usuario>
+                    <puntos>50</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>4bcf064c46415591a3f971621b5e1f0d636e968dffb96e8e430dd235674c98e7</contrasenaHash>
+                    <correoElectronico>antonio1973@gmail.com</correoElectronico>
+                    <nombre>Antonio Jiménez</nombre>
+                    <usuario>antonio73</usuario>
+                    <puntos>0</puntos>
+                </voluntario>
+                <voluntario>
+                    <contrasenaHash>e99a18c428cb38d5f260853678922e03</contrasenaHash>
+                    <correoElectronico>maria@example.com</correoElectronico>
+                    <nombre>Maria López</nombre>
+                    <usuario>maria123</usuario>
+                    <puntos>20</puntos>
+                </voluntario>
+            </voluntariosAsignados>
+            <creador>
+                <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+                <correoElectronico>a@gm.es</correoElectronico>
+                <nombre>a</nombre>
+                <usuario>a</usuario>
+                <nombreONG>s</nombreONG>
+            </creador>
+            <puntos>80</puntos>
+        </actividades>
+    </iniciativa>
+    <iniciativa>
+        <nombreIniciativa>Construcción de Refugios</nombreIniciativa>
+        <descripcion>Construcción de refugios para personas sin hogar.</descripcion>
+        <creador>
+            <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+            <correoElectronico>a@gm.es</correoElectronico>
+            <nombre>a</nombre>
+            <usuario>a</usuario>
+            <nombreONG>s</nombreONG>
+        </creador>
+        <actividades>
+            <nombre>Madrid</nombre>
+            <descripcion>Construcción de refugios en la ciudad de Madrid.</descripcion>
+            <fechaInicio>2025-07-01T00:00:00+02:00</fechaInicio>
+            <fechaFin>2025-07-31T00:00:00+02:00</fechaFin>
+            <estado>EN_PROGRESO</estado>
+            <voluntariosAsignados/>
+            <creador>
+                <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+                <correoElectronico>a@gm.es</correoElectronico>
+                <nombre>a</nombre>
+                <usuario>a</usuario>
+                <nombreONG>s</nombreONG>
+            </creador>
+            <puntos>150</puntos>
+        </actividades>
+    </iniciativa>
+    <iniciativa>
+        <nombreIniciativa>Educación para Todos</nombreIniciativa>
+        <descripcion>Programas educativos para niños en comunidades rurales.</descripcion>
+        <creador>
+            <contrasenaHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</contrasenaHash>
+            <correoElectronico>admin@caritas.es</correoElectronico>
+            <nombre>admin</nombre>
+            <usuario>admin</usuario>
+            <nombreONG>Cáritas</nombreONG>
+        </creador>
+        <actividades>
+            <nombre>Almería</nombre>
+            <descripcion>Clases de refuerzo escolar en comunidades rurales.</descripcion>
+            <fechaInicio>2025-08-01T00:00:00+02:00</fechaInicio>
+            <fechaFin>2025-08-31T00:00:00+02:00</fechaFin>
+            <estado>COMPLETADA</estado>
+            <voluntariosAsignados/>
+            <creador>
+                <contrasenaHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</contrasenaHash>
+                <correoElectronico>admin@caritas.es</correoElectronico>
+                <nombre>admin</nombre>
+                <usuario>admin</usuario>
+                <nombreONG>Cáritas</nombreONG>
+            </creador>
+            <puntos>200</puntos>
+        </actividades>
+    </iniciativa>
+    <iniciativa>
+        <nombreIniciativa>Reciclaje Comunitario</nombreIniciativa>
+        <descripcion>Iniciativa para promover el reciclaje en comunidades urbanas.</descripcion>
+        <creador>
+            <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+            <correoElectronico>a@gm.es</correoElectronico>
+            <nombre>a</nombre>
+            <usuario>a</usuario>
+            <nombreONG>s</nombreONG>
+        </creador>
+        <actividades>
+            <nombre>Barcelona</nombre>
+            <descripcion>Campaña de reciclaje en barrios de Barcelona.</descripcion>
+            <fechaInicio>2025-09-01T00:00:00+02:00</fechaInicio>
+            <fechaFin>2025-09-30T00:00:00+02:00</fechaFin>
+            <estado>CANCELADA</estado>
+            <voluntariosAsignados/>
+            <creador>
+                <contrasenaHash>ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb</contrasenaHash>
+                <correoElectronico>a@gm.es</correoElectronico>
+                <nombre>a</nombre>
+                <usuario>a</usuario>
+                <nombreONG>s</nombreONG>
+            </creador>
+            <puntos>120</puntos>
+        </actividades>
+    </iniciativa>
+    <iniciativa>
+        <nombreIniciativa>Limpieza de Playas de Barcelona</nombreIniciativa>
+        <descripcion>Recogida de basura y desechos en barcelona</descripcion>
+        <creador>
+            <contrasenaHash>e27622e8321da74e6eafb1cee8e7804200cb536ef606173c0376d5f8c470ceaf</contrasenaHash>
+            <correoElectronico>ramon@gmail.com</correoElectronico>
+            <nombre>ramon</nombre>
+            <usuario>ramon</usuario>
+            <nombreONG>Manos Unidas</nombreONG>
+        </creador>
+        <fechaInicio>2024-04-22T00:00:00+02:00</fechaInicio>
+        <fechaFin>2024-06-22T00:00:00+02:00</fechaFin>
+        <estado>EN_PROGRESO</estado>
+    </iniciativa>
 </iniciativas>
